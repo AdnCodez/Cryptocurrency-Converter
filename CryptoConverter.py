@@ -51,7 +51,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.cur2 = item2
         # print(self.cur2)
         
-    # Live data from api
+    # Live data from API
     def api(self, cur1, cur2):
         api_link = "https://min-api.cryptocompare.com/data/pricemulti?fsyms={}&tsyms={}".format(cur1, cur2)
         resp = requests.get(api_link)
