@@ -11,7 +11,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
         self.setupUi(self)
         self.show()
-        # Var
+        # Vars
         self.new_label = '0'
         self.cur1 = 'BTC'
         self.cur2 = 'USD'
@@ -50,7 +50,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def currencies2(self, item2):
         self.cur2 = item2
         # print(self.cur2)
-
+        
+    # Live data from api
     def api(self, cur1, cur2):
         api_link = "https://min-api.cryptocompare.com/data/pricemulti?fsyms={}&tsyms={}".format(cur1, cur2)
         resp = requests.get(api_link)
@@ -84,4 +85,3 @@ if __name__ == '__main__':
     app.setApplicationName("CryptoConverter")
     window = MainWindow()
     app.exec_()
-
